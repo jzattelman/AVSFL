@@ -1,11 +1,5 @@
 <% provide(:smalltitle, "#{@session.date.strftime("%A, %e %B, %Y")} @ #{@session.location} for #{@session.client}")%>
 
-<% content_for :nav do %>
-  <%= link_to 'Main Menu', static_pages_home_path %>
-  <%= link_to 'Back to Sessions', sessions_path %>
-  <%= link_to 'New Flight', new_session_flight_path(@session.id) %>
-<% end %>
-
 <div class="warnings">
   <% if @healthfile == "fail" %>
     Remote pilot is not fit for flying
@@ -55,6 +49,7 @@
 <div id="flighttable">
   <%= render partial: "flights/flighttable", locals: { flights: @session.flights } %>
 </div>
+<td><%= link_to 'New Flight', new_session_flight_path(@session.id), class: "btn btn-small btn-inverse" %>
 
 
 

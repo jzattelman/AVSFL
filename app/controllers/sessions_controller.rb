@@ -20,6 +20,7 @@ class SessionsController < ApplicationController
   # GET /sessions/1
   # GET /sessions/1.json
   def show
+    @flight = Flight.new
     @session = Session.find(params[:id])
     @remote_pilot = Pilot.find(@session.remote_pilot_id)
     @chief_pilot = Pilot.find(@session.chief_pilot_id)
