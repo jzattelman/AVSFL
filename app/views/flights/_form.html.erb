@@ -1,0 +1,33 @@
+  <%= form_for([@flight.session, @flight]) do |f| %>
+    <div class="field">
+      <%= f.label :spin_up_time %>
+      <%= f.time_select :spin_up_time, default: (Time.now) %>
+    </div>
+    <div class="field">
+      <%= f.label :spin_down_time %>
+      <%= f.time_select :spin_down_time, default: (Time.now) %>
+    </div>
+    <div class="field">
+      <%= f.label :battery_id %>
+      <%= f.collection_select :battery_id, current_user.company.batteries, :id, :code, :prompt => true %>
+    </div>
+    <div class="field">
+      <%= f.label "Battery start voltage" %>
+      <div class="input-append">
+            <%= f.text_field :battery_start_reading, class: "span2", id: "appendedInput" %>
+            <span class="add-on">Volts</span>
+      </div>
+    </div>
+    <div class="field">
+      <%= f.label "Full battery used" %>
+      <%= f.check_box :fullbatteryused %>
+    </div>
+    <div class="field">
+      <%= f.label "Incident"%>
+      <%= f.check_box :isincident %>
+    </div>
+    <div class="actions">
+      </br>
+      <%= f.submit %>
+    </div>
+  <% end %>

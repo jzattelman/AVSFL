@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Date:</b>
+  <%= @batterycharge.date %>
+</p>
+
+<p>
+  <b>Status:</b>
+  <%= @batterycharge.status %>
+</p>
+
+<p>
+  <b>Start voltage decimal:</b>
+  <%= @batterycharge.start_voltage_decimal %>
+</p>
+
+<p>
+  <b>End voltage:</b>
+  <%= @batterycharge.end_voltage %>
+</p>
+
+<p>
+  <b>End percentage:</b>
+  <%= @batterycharge.end_percentage %>
+</p>
+
+<p>
+  <b>Battery:</b>
+  <%= @batterycharge.battery %>
+</p>
+
+
+<%= link_to 'Edit', edit_batterycharge_path(@batterycharge) %> |
+<%= link_to 'Back', batterycharges_path %>

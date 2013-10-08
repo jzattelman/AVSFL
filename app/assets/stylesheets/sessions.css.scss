@@ -1,0 +1,95 @@
+// Place all the styles related to the Sessions controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+/* Session styles ---------------------------------------------------------------------*/
+
+
+.maplink a{
+	color:#4278f3;
+}
+
+#errordiv {
+	width:920px;
+	float:left;
+	color:#8E0000;
+}
+
+.tableheading {
+	background-color:#e7e6e5;
+}
+
+.space {
+	margin-bottom:10px;
+}
+
+.warnings {
+	float:left;
+	width:920px;
+	color:#BF1717;
+	font-size:16px;
+	margin-bottom:10px;
+}
+
+#map_canvas {
+	border:1px solid #999;
+}
+
+.invisible {
+	visibility: hidden;
+}
+
+#sessionpanel {
+	float:left;
+	width:920px;
+	height:400px;
+	//background-color:#a6fdbf;
+}
+
+
+
+
+/* END Session styles ---------------------------------------------------------------------*/
+
+/* Flight styles ---------------------------------------------------------------------*/
+
+#flighttable {
+	float:left;
+	width:920px;
+	margin-bottom:20px;
+}
+
+/* END Flight styles ---------------------------------------------------------------------*/
+
+
+/* Session Index styles ---------------------------------------------------------------------*/
+
+#sessionindex {
+	float:left;
+	width:940px;
+	padding-left:20px;
+	background-color:#aad7f7;
+	min-height:600px;
+}
+
+.sessionsubmit {
+	float:right;
+	margin:10px 60px 0px 0px;
+}
+
+#sessiontable {
+	float:left;
+	width:920px;
+	margin-bottom:20px;
+	margin-top:10px;
+}
+
+#nosessions {
+	float:left;
+	width:940px;
+}
+
+/* END Session Index styles ---------------------------------------------------------------------*/
+
+
+

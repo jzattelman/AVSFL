@@ -1,0 +1,89 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require_tree .
+ */
+
+ /*Table styles*/
+
+
+ table {
+ 	width:920px;
+ 	text-align:center;
+ }
+
+ #logobox {
+ 	float: left;
+ 	width:150px;
+ }
+
+ #titlebox {
+ 	float:left;
+ 	width: 650px;
+ }
+
+ #adminbox {
+ 	float:left;
+ 	width:150px;
+ }
+
+
+ .btn a:visited{
+ 	color:FFF;
+ }
+
+#wrapper {
+	width:960px;
+	margin: 0 auto;
+	border:1px solid #000;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	background-color:#FFF;
+}
+
+ #header {
+ 	float:left;
+ 	width:950px;
+ 	height:60px;
+ 	padding-left:10px;
+ 	padding-top:15px;
+ 	display:block;
+ 	text-align:center;
+ 	color:#000;
+ 	margin-bottom:20px;
+ }
+
+ .smallheading {
+ 	font-size:16px;
+ 	margin-top:10px;
+ }
+
+ .largeheading {
+ 	font-size:30px;
+ 	margin-top:20px;
+ }
+
+
+ #mainsection {
+ 
+ 	width:920px;
+ 	float:left;
+ 	padding:20px;
+ 	min-height:600px;
+ }
+
+ #navigationbar {
+ 	width:650px;
+	display:block;
+	margin: 0px auto;
+}
+
+

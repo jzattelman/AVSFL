@@ -1,0 +1,38 @@
+// Place all the styles related to the Incidents controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.sectionblock {
+	float:left;
+	width:920px;
+	padding-left:20px;
+	padding-right:20px;
+	//background-color:#FFE6EE;
+	margin-bottom:20px;
+}
+
+.flightdatablock {
+	float:left;
+	width:300px;
+	//background-color:#E6FFF2;
+}
+
+.question {
+	text-align:left;
+	padding-left:10px;
+}
+
+td {
+	padding-top:5px;
+	padding-bottom:5px;
+}
+
+#panel {
+	width:920px;
+	float:left;
+	padding:20px;
+}
+
+table {
+	margin-bottom:10px;
+}

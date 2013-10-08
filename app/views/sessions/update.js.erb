@@ -1,0 +1,21 @@
+var el = $('#errordiv');
+<% if @session.errors.any? %>
+
+  // Create a list of errors
+  var errors = $('<ul />');
+
+  <% @session.errors.full_messages.each do |error| %>
+    errors.append('<li><%= escape_javascript( error ) %></li>');
+  <% end %>
+
+  // Display errors on form
+  el.html(errors);
+
+<% else %>
+	$("#sessiontable").html("<%= escape_javascript (render partial: "sessiontable", locals: { sessions: @sessions }) %>");
+	$("#addsession").html("<h2>Add Session</h2>");
+	$("#addsession").append("<%= escape_javascript (render partial: "form", locals: { session: @newsession}) %>");
+	$("#editsession").html("");
+<% end %>
+
+

@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>First name:</b>
+  <%= @pilot.first_name %>
+</p>
+
+<p>
+  <b>Last name:</b>
+  <%= @pilot.last_name %>
+</p>
+
+<p>
+  <b>Arn:</b>
+  <%= @pilot.arn %>
+</p>
+
+<p>
+  <b>Uav certified:</b>
+  <%= @pilot.uav_certified %>
+</p>
+
+
+<%= link_to 'Edit', edit_pilot_path(@pilot) %> |
+<%= link_to 'Back', pilots_path %>

@@ -1,0 +1,3 @@
+$("#editflight").html("<h2>Edit flight:</h2>");
+$("#addflight").html("");
+$("#editflight").append("<%= escape_javascript(render partial: "flights/form", locals: { flight: @flight }) %>");

@@ -1,0 +1,33 @@
+<h1>Listing flights</h1>
+
+<table>
+  <tr>
+    <th>Battery start reading (%)</th>
+    <th>Spin up time</th>
+    <th>Spin down time</th>
+    <th>Total flight time</th>
+    <th>Battery</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @flights.each do |flight| %>
+  <tr>
+    <td><%= flight.battery_start_reading %></td>
+    <td><%= flight.spin_up_time %></td>
+    <td><%= flight.spin_down_time %></td>
+    <td><%= number_with_precision(flight.total_flight_time, :precision => 2) %></td>
+    <% battery = Battery.find(flight.battery_id) %>
+    <td><%= battery.code %></td>
+    <td><%= link_to 'Show', [flight.session, flight] %></td>
+    <td><%= link_to 'Edit', edit_session_flight_path(flight.session, flight) %></td>
+    <td><%= link_to 'Destroy', [flight.session, flight], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'Back', session_path(@session) %>
+<%= link_to 'New Flight', new_session_flight_path %>

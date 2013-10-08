@@ -1,0 +1,41 @@
+<%= form_for(@batterycharge) do |f| %>
+  <% if @batterycharge.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@batterycharge.errors.count, "error") %> prohibited this batterycharge from being saved:</h2>
+
+      <ul>
+      <% @batterycharge.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :date %><br />
+    <%= f.date_select :date %>
+  </div>
+  <div class="field">
+    <%= f.label :status %><br />
+    <%= f.select(:status, [['From flight','From flight'],['From storage','From storage']]) %>
+  </div>
+  <div class="field">
+    <%= f.label :start_voltage_decimal %><br />
+    <%= f.text_field :start_voltage_decimal %>
+  </div>
+  <div class="field">
+    <%= f.label :end_voltage %><br />
+    <%= f.text_field :end_voltage %>
+  </div>
+  <div class="field">
+    <%= f.label :end_percentage %><br />
+    <%= f.text_field :end_percentage %>
+  </div>
+  <div class="field">
+    <%= f.label :battery_id %><br />
+    <%= f.collection_select :battery_id, @batteries, :id, :code, :prompt => true %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

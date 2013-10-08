@@ -1,0 +1,15 @@
+<div data-role="header">
+  <h1>Flying Sessions</h1>
+  <%= link_to 'Add', new_session_path, "data-icon" => "plus", "class" => "ui-btn-right" %>
+</div>
+ 
+<div data-role="content">
+  <ul data-role="listview">
+    <% @sessions.each do |session| %>
+    <li>
+      <%= link_to "#{session.date} #{session.client} @ #{session.location}", session %>
+      <%= link_to 'edit post', edit_session_path(session), "data-icon" => "gear" %>
+    </li>
+    <% end %>
+  </ul>
+</div>

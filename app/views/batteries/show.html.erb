@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Code:</b>
+  <%= @battery.code %>
+</p>
+
+<p>
+  <b>New date:</b>
+  <%= @battery.new_date %>
+</p>
+
+
+<%= link_to 'Edit', edit_battery_path(@battery) %> |
+<%= link_to 'Back', batteries_path %>

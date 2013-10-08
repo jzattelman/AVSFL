@@ -1,0 +1,16 @@
+<% provide(:title, "Flight Log")%>
+<div id= "welcomepanel">
+	 <div id="mainnav">
+	 	<div class="navblock"><%= link_to 'Flight Sessions', sessions_path %></div>
+	 	<div class="navblock"><%= link_to 'Fit for Work', pilot_fitness_files_path %></div>
+	 	<div class="navblock"><%= link_to 'Battery Charges', batterycharges_path %></div>
+	 	<div class="navblock"><%= link_to 'Battery List', batteries_path %></div>
+	 	<div class="navblock"><%= link_to 'Incidents', incidents_path %></div>
+	 	<div class="navblock"><%= link_to 'Pilots', pilots_path %></div>
+	 	<div class="navblock"><%= link_to 'Statistics', static_pages_statistics_path %></div>
+	 	<% if current_user.admin == true %>
+	 		<div class="navblock"><%= link_to 'Users', users_path %></div>
+	 	<% end %>
+	 	<div style="clear:both"></div>
+	 </div>
+</div>

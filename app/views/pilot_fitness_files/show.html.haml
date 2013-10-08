@@ -1,0 +1,58 @@
+-provide(:smalltitle, "#{@pilot_fitness_file.pilot.first_name} #{@pilot_fitness_file.pilot.last_name} #{@pilot_fitness_file.date.strftime("%e %B, %Y")}")
+%p#notice= notice
+%h2 
+  
+
+-content_for :nav do
+  =link_to 'Main Menu', static_pages_home_path
+  =link_to 'Back', pilot_fitness_files_path
+
+%table
+  %thead
+    %tr
+      %th Question
+      %th Answer
+
+  %tbody
+    %tr
+      %td.question Do you feel that you are capable and fit to perform the required tasks at work today?
+      %td= if @pilot_fitness_file.q1 == true then "yes" else "no" end
+    %tr
+      %td.question Have you had at least seven (7) hours sleep before you started shift today?
+      %td= if @pilot_fitness_file.q2 == true then "yes" else "no" end
+    %tr
+      %td.question Do you feel adequately rested?
+      %td= if @pilot_fitness_file.q3 == true then "yes" else "no" end
+    %tr
+      %td.question Was your last shift more than ten (10) hours ago?
+      %td= if @pilot_fitness_file.q4 == true then "yes" else "no" end
+    %tr
+      %td.question Was your last medical examination within the last five (5) years?
+      %td= if @pilot_fitness_file.q5 == true then "yes" else "no" end
+    %tr
+      %td.question Based on your last medical examination, were you considered fit for work?
+      %td= if @pilot_fitness_file.q6 == true then "yes" else "no" end
+    %tr
+      %td.question Have you been having at least three (3) nutritious meals a day?
+      %td= if @pilot_fitness_file.q7 == true then "yes" else "no" end
+    %tr
+      %td.question Have you been exercising regularly? 
+      %td= if @pilot_fitness_file.q8 == true then "yes" else "no" end
+    %tr
+      %td.question Do you have any injuries that could prevent you from doing your job safely?
+      %td= if @pilot_fitness_file.q9 == true then "yes" else "no" end
+    %tr
+      %td.question Are you currently under a lot of stress that would prevent you from concentrating on the job?
+      %td= if @pilot_fitness_file.q10 == true then "yes" else "no" end
+    %tr
+      %td.question Are there any work related or non-work related factors that will prevent you from being able to work properly?
+      %td= if @pilot_fitness_file.q11 == true then "yes" else "no" end
+    %tr
+      %td.question Do you have any physical or mental illness or impairment that will prevent you from working properly?
+      %td= if @pilot_fitness_file.q12 == true then "yes" else "no" end
+    %tr
+      %td.question Have you been taking sleeping tablets?
+      %td= if @pilot_fitness_file.q13 == true then "yes" else "no" end
+    %tr
+      %td.question Are you on any prescription drugs?
+      %td= if @pilot_fitness_file.q14 == true then "yes" else "no" end

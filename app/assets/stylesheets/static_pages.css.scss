@@ -1,0 +1,46 @@
+// Place all the styles related to the StaticPages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+#welcomepanel {
+	width:920px;
+	float:left;
+	height:600px;
+	background:#ffffff url('/assets/welcomebackground.jpg') no-repeat right top;
+}
+
+#mainnav {
+	margin: 0 auto;
+	width:495px;
+	//background-color:#FFF;
+	margin-top:240px;
+}
+
+.navblock a{
+	float:left;
+	width:138px;
+	text-align: center;
+	padding:10px;
+	background-color:#fff1d6;
+	text-decoration:none;
+	border:1px solid #ffc554;
+	border-radius: 5px;
+	margin-right:5px;
+	margin-bottom:5px;
+	color:#000;
+}
+
+.navblock a:hover {
+	color:#666;
+}
+
+.adminblock {
+	float:left;
+	width:250px;
+	height:500px;
+	margin-left:20px;
+}
+
+.borderright {
+	border-right: 1px solid #cecece;
+}

@@ -1,0 +1,98 @@
+<%= form_for(@session) do |f|%>
+  <% if @session.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@session.errors.count, "error") %> prohibited this session from being saved:</h2>
+
+      <ul>
+      <% @session.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="hide">
+    <%= f.text_field :latitude %>
+    <%= f.text_field :longitude%>
+  </div>
+
+  <div id="col1">
+    <button type="button" class="btn btn-danger space" data-toggle="collapse" data-target="#demo">
+      Locate using address
+    </button>
+    <div id="demo" class="collapse">
+      <%= f.text_field :address, class: "input-xxlarge", placeholder: "Type in address here including suburb" %>
+    </div>
+    <div class="field">
+      <%= f.label :date %>
+      <%= f.date_select :date %>
+    </div>
+    <div class="field">
+      <%= f.label :client %>
+      <%= f.text_field :client %>
+    </div>
+    <div class="field">
+      <%= f.label "Suburb" %>
+      <%= f.text_field :location %>
+    </div>
+    <div class="field">
+      <%= f.label :windspeed %>
+      <div class="input-append">
+            <%= f.text_field :windspeed, class: "span2", id: "appendedInput" %>
+            <span class="add-on">kts</span>
+      </div>
+    </div>
+    <div class="field">
+      <%= f.label :weather %>
+      <%= f.select(:weather, [['Hi-Vis','Hi-Vis'],['Med-Vis','Med-Vis'],['Low-Vis','Low-Vis'],['Dark','Dark']]) %>
+    </div>
+    <div class="field">
+      <%= f.label :remote_pilot_id %>
+      <% pilots = Pilot.find(:all, :conditions => {:uav_certified => true}) %>
+      <%= f.collection_select(:remote_pilot_id, Pilot.all, :id, :last_name, :prompt => 'Select Remote Pilot', :selected => 1) %>
+    </div>
+    <div class="field">
+      <%= f.label :chief_pilot_id %>
+      <%= f.collection_select(:chief_pilot_id, pilots, :id, :last_name, :prompt => 'Select Chief Pilot', :selected => 1) %>
+    </div>
+    <div class="field">
+      <%= f.label :observer %>
+      <%= f.text_field :observer %>
+    </div>
+
+    <div class="field">
+      <%= f.label :payload %>
+      <%= f.select(:payload, ['10 megapixel']) %>
+    </div>
+    <div class="field">
+      <%= f.label :gcs_deployment %>
+      <%= f.select(:gcs_deployment, [['Static','Static'],['Mobile','Mobile']]) %>
+    </div>
+    <div class="field">
+      <%= f.label "GCS control" %>
+      <%= f.select(:gcs_control, [['MCS Screen','MCS Screen'],['Laptop','Laptop'],['Video Glasses','Video Glasses']]) %>
+    </div>
+
+    <div class="field">
+      <%= f.label "JSA Completion Time" %>
+      <%= f.time_select :jsa_time, default: (Time.now) %>
+    </div>
+    <div class="field">
+      <%= f.label :pre_flight_time %>
+      <%= f.time_select :pre_flight_time, default: (Time.now) %>
+    </div>
+    <div class="field">
+      <%= f.label :mission_briefing_time %>
+      <%= f.time_select :mission_briefing_time, default: (Time.now) %>
+    </div>
+
+    <div class="field">
+      <%= f.label :task %>
+      <%= f.text_area :task, :rows => '5', :style => "width:500px;" %>
+    </div>
+  </div>
+
+  <div class="sessionsubmit">
+    <%= f.submit %>
+  </div>
+<% end %>

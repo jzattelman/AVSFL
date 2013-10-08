@@ -1,0 +1,1 @@
+$("#flighttable").html("<%= escape_javascript(render partial: "flights/flighttable", locals: { flights: @session.flights }) %>");

@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  date: 2013-06-14
+  status: MyString
+  start_voltage_decimal: MyString
+  end_voltage: 9.99
+  end_percentage: 9.99
+  battery: 
+
+two:
+  date: 2013-06-14
+  status: MyString
+  start_voltage_decimal: MyString
+  end_voltage: 9.99
+  end_percentage: 9.99
+  battery: 

@@ -1,0 +1,37 @@
+-content_for :nav do
+	=link_to 'Main Menu', static_pages_home_path
+
+
+-if current_user.admin == true
+	.adminblock.borderright
+		%h3 Company details
+		=form_for @company do |f|
+			.field
+				= f.label "Name"
+				= f.text_field :name
+
+			.field
+				= f.label "Company logo"
+				= f.file_field :image
+
+			.actions
+				= f.submit 'Save'
+
+.adminblock
+	%h3 User details
+	=form_for @user do |fa|
+		.field
+			= fa.label "First Name"
+			= fa.text_field :firstname
+		.field
+			= fa.label "Last Name"
+			= fa.text_field :lastname
+		.field
+			= fa.label "Password"
+			= fa.password_field :password
+		.field
+			= fa.label "Confirm password"
+			= fa.password_field :password_confirmation
+
+		.actions
+			= fa.submit 'Save'

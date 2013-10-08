@@ -1,0 +1,108 @@
+= form_for(@pilot_fitness_file) do |f|
+  - if @pilot_fitness_file.errors.any?
+    #error_explanation
+      %h2 #{pluralize(@pilot_fitness_file.errors.count, "error")} prohibited this pilot_fitness_file from being saved:
+
+      %ul
+        - @pilot_fitness_file.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label "Pilot name"
+    = f.collection_select(:pilot_id, Pilot.all, :id, :last_name, :prompt => 'Select Remote Pilot', :selected => 1)
+
+  %table
+    %thead
+      %tr
+        %th Question
+        %th Yes
+        %th No
+
+    %tbody    
+      / #QUESTION 1
+      %tr
+        %td.question Do you feel that you are capable and fit to perform the required tasks at work today?
+        %td= radio_button("pilot_fitness_file", "q1", true) 
+        %td= radio_button("pilot_fitness_file", "q1", false) 
+      
+      / #QUESTION 2
+      %tr
+        %td.question Have you had at least seven (7) hours sleep before you started shift today?
+        %td= radio_button("pilot_fitness_file", "q2", true) 
+        %td= radio_button("pilot_fitness_file", "q2", false) 
+      
+      / #QUESTION 3
+      %tr
+        %td.question Do you feel adequately rested?
+        %td= radio_button("pilot_fitness_file", "q3", true) 
+        %td= radio_button("pilot_fitness_file", "q3", false) 
+      
+      / #QUESTION 4
+      %tr
+        %td.question Was your last shift more than ten (10) hours ago?
+        %td= radio_button("pilot_fitness_file", "q4", true) 
+        %td= radio_button("pilot_fitness_file", "q4", false) 
+      
+      / #QUESTION 5
+      %tr
+        %td.question Was your last medical examination within the last five (5) years?
+        %td= radio_button("pilot_fitness_file", "q5", true) 
+        %td= radio_button("pilot_fitness_file", "q5", false) 
+      
+      / #QUESTION 6
+      %tr
+        %td.question Based on your last medical examination, were you considered fit for work?
+        %td= radio_button("pilot_fitness_file", "q6", true) 
+        %td= radio_button("pilot_fitness_file", "q6", false) 
+      
+      / #QUESTION 7
+      %tr
+        %td.question Have you been having at least three (3) nutritious meals a day?
+        %td= radio_button("pilot_fitness_file", "q7", true) 
+        %td= radio_button("pilot_fitness_file", "q7", false) 
+      
+      / #QUESTION 8
+      %tr
+        %td.question Have you been exercising regularly? 
+        %td= radio_button("pilot_fitness_file", "q8", true) 
+        %td= radio_button("pilot_fitness_file", "q8", false) 
+      
+      / #QUESTION 9
+      %tr
+        %td.question Do you have any injuries that could prevent you from doing your job safely?
+        %td= radio_button("pilot_fitness_file", "q9", true) 
+        %td= radio_button("pilot_fitness_file", "q9", false) 
+      
+      / #QUESTION 10
+      %tr
+        %td.question Are you currently under a lot of stress that would prevent you from concentrating on the job?
+        %td= radio_button("pilot_fitness_file", "q10", true) 
+        %td= radio_button("pilot_fitness_file", "q10", false) 
+      
+      / #QUESTION 11
+      %tr
+        %td.question Are there any work related or non-work related factors that will prevent you from being able to work properly?
+        %td= radio_button("pilot_fitness_file", "q11", true) 
+        %td= radio_button("pilot_fitness_file", "q11", false) 
+      
+      / #QUESTION 12
+      %tr
+        %td.question Do you have any physical or mental illness or impairment that will prevent you from working properly?
+        %td= radio_button("pilot_fitness_file", "q12", true) 
+        %td= radio_button("pilot_fitness_file", "q12", false) 
+      
+      / #QUESTION 13
+      %tr
+        %td.question Have you been taking sleeping tablets?
+        %td= radio_button("pilot_fitness_file", "q13", true) 
+        %td= radio_button("pilot_fitness_file", "q13", false) 
+      
+      / #QUESTION 14
+      %tr
+        %td.question Are you on any prescription drugs?
+        %td= radio_button("pilot_fitness_file", "q14", true) 
+        %td= radio_button("pilot_fitness_file", "q14", false) 
+      
+  
+  .actions
+    = f.submit

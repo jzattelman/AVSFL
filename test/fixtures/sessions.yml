@@ -1,0 +1,35 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  date: 2013-06-13
+  location: MyString
+  client: MyString
+  task: MyText
+  weather: MyString
+  windspeed: 1
+  remote_pilot_id: 1
+  chief_pilot_id: 1
+  observer: MyString
+  payload: MyString
+  gcs_deployment: MyString
+  gcs_control: MyString
+  jsa_time: 2013-06-13 08:49:49
+  pre_flight_time: 2013-06-13 08:49:49
+  mission_briefing_time: 2013-06-13 08:49:49
+
+two:
+  date: 2013-06-13
+  location: MyString
+  client: MyString
+  task: MyText
+  weather: MyString
+  windspeed: 1
+  remote_pilot_id: 1
+  chief_pilot_id: 1
+  observer: MyString
+  payload: MyString
+  gcs_deployment: MyString
+  gcs_control: MyString
+  jsa_time: 2013-06-13 08:49:49
+  pre_flight_time: 2013-06-13 08:49:49
+  mission_briefing_time: 2013-06-13 08:49:49

@@ -1,0 +1,19 @@
+var el = $('#errordiv');
+<% if @flight.errors.any? %>
+
+  // Create a list of errors
+  var errors = $('<ul />');
+
+  <% @flight.errors.full_messages.each do |error| %>
+    errors.append('<li><%= escape_javascript( error ) %></li>');
+  <% end %>
+
+  // Display errors on form
+  el.html(errors);
+
+<% else %>
+	$("#flighttable").html("<%= escape_javascript(render partial: "flights/flighttable", locals: { flights: @session.flights }) %>");
+	$("#addflight").html("<h2>Add flight:</h2>");
+	$("#addflight").append("<%= escape_javascript(render partial: "flights/form", locals: { flight: @session.flights.build }) %>");
+  el.html("");
+<% end %>

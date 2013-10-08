@@ -1,0 +1,29 @@
+= form_for @company, :html => {:multipart => true} do |f|
+  - if @company.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@company.errors.count, "error")} prohibited this company from being saved:"
+      %ul
+        - @company.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label "Company name"
+    = f.text_field :name
+
+  %h3= "Administrator Details"
+
+  = fields_for :users do |fa|
+
+    .field
+      = fa.label "First name"
+      = fa.text_field :firstname
+      = fa.label "Last name"
+      = fa.text_field :lastname
+      = fa.label "Email"
+      = fa.text_field :email
+      = fa.label "Password"
+      = fa.password_field :password
+      = fa.label "Password confirmation"
+      = fa.password_field :password_confirmation
+    .actions
+      = f.submit 'Save'

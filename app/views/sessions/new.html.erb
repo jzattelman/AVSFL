@@ -1,0 +1,23 @@
+<script>
+  if(navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(function(position) {
+      document.getElementById('session_latitude').value = position.coords.latitude;
+      document.getElementById('session_longitude').value = position.coords.longitude;
+    }, function() {
+      alert('We couldn\'t find your position.');
+    });
+  } else {
+    alert('Your browser doesn\'t support geolocation.');
+  }
+</script>
+
+<% provide(:title, "New Session")%>
+
+<% content_for :nav do %>
+    <%= link_to 'Main Menu', static_pages_home_path %>
+    <%= link_to 'Back', sessions_path %>
+<% end %>
+
+<%= render 'form' %>
+
+

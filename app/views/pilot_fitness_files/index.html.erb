@@ -1,0 +1,27 @@
+<% provide(:title, "Fit for Work")%>
+
+<% content_for :nav do %>
+    <%= link_to 'Main Menu', static_pages_home_path %>
+    <%= link_to 'New Fit for Work', new_pilot_fitness_file_path %>
+<% end %>
+
+<table class="table table-striped table-bordered">
+  <tr>
+    <th>Pilot</th>
+    <th>Date</th>
+    <th width="130"></th>
+  </tr>
+
+<% @pilot_fitness_files.each do |pilot_fitness_file| %>
+  <tr>
+    <td><%= "#{pilot_fitness_file.pilot.first_name} #{pilot_fitness_file.pilot.last_name}" %></td>
+    <td><%= pilot_fitness_file.date %></td>
+    <td><%= link_to 'Show', pilot_fitness_file, class: "btn btn-small btn-inverse" %>
+    <!--<td><%= link_to 'Edit', edit_pilot_fitness_file_path(pilot_fitness_file) %></td>-->
+        <%= link_to 'Delete', pilot_fitness_file, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-small btn-danger" %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+

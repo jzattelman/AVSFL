@@ -1,0 +1,81 @@
+<%= form_for(@incident) do |f| %>
+  <% if @incident.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@incident.errors.count, "error") %> prohibited this incident from being saved:</h2>
+
+      <ul>
+      <% @incident.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :report_date %><br />
+    <%= f.date_select :report_date %>
+  </div>
+  <div class="field">
+    <%= f.label :reporter_name %><br />
+    <%= f.text_field :reporter_name %>
+  </div>
+  <div class="field">
+    <%= f.label :personal_injury %><br />
+    <%= f.check_box :personal_injury %>
+  </div>
+  <div class="field">
+    <%= f.label :equipment_damage %><br />
+    <%= f.check_box :equipment_damage %>
+  </div>
+  <div class="field">
+    <%= f.label :thirdparty_damage %><br />
+    <%= f.check_box :thirdparty_damage %>
+  </div>
+  <div class="field">
+    <%= f.label :witness_names %><br />
+    <%= f.text_field :witness_names %>
+  </div>
+  <div class="field">
+    <%= f.label :incident_time %><br />
+    <%= f.time_select :incident_time %>
+  </div>
+  <div class="field">
+    <%= f.label :casa_notified %><br />
+    <%= f.check_box :casa_notified %>
+  </div>
+  <div class="field">
+    <%= f.label :chief_pilot_notified %><br />
+    <%= f.check_box :chief_pilot_notified %>
+  </div>
+  <div class="field">
+    <%= f.label :management_notified %><br />
+    <%= f.check_box :management_notified %>
+  </div>
+  <div class="field">
+    <%= f.label :atrb_notified %><br />
+    <%= f.check_box :atrb_notified %>
+  </div>
+  <div class="field">
+    <%= f.label :worksafe_notified %><br />
+    <%= f.check_box :worksafe_notified %>
+  </div>
+  <div class="field">
+    <%= f.label :insurance_notified %><br />
+    <%= f.check_box :insurance_notified %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br />
+    <%= f.text_area :description %>
+  </div>
+  <div class="field">
+    <%= f.label :consequences %><br />
+    <%= f.text_area :consequences %>
+  </div>
+  <div class="field">
+    <%= f.label :action_taken %><br />
+    <%= f.text_area :action_taken %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

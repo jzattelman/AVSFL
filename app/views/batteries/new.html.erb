@@ -1,0 +1,9 @@
+<% provide(:title, "New Battery")%>
+
+<% content_for :nav do %>
+	<%= link_to 'Back', batteries_path %>
+<% end %>
+
+<h1>New battery</h1>
+
+<%= render 'form' %>

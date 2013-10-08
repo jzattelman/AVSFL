@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Battery start reading:</b>
+  <%= @flight.battery_start_reading %> %
+</p>
+
+<p>
+  <b>Spin up time:</b>
+  <%= @flight.spin_up_time %>
+</p>
+
+<p>
+  <b>Spin down time:</b>
+  <%= @flight.spin_down_time %>
+</p>
+
+<p>
+  <b>Total flight time:</b>
+  <%= number_with_precision(@flight.total_flight_time, :precision => 2) %> Hours
+</p>
+
+<p>
+  <b>Battery:</b>
+  <%= @battery.code %>
+</p>
+
+
+<%= link_to 'Edit', edit_session_flight_path(@flight.session, @flight) %> |
+<%= link_to 'Back', session_flights_path(@flight.session) %>

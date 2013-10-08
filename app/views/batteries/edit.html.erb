@@ -1,0 +1,12 @@
+<% provide(:title, "Edit Battery")%>
+
+<%= content_for :nav do %>
+	<%= link_to 'Back', batteries_path %>
+<% end %>
+
+<h1>Editing battery</h1>
+
+<%= render 'form' %>
+
+<%= link_to 'Show', @battery %> |
+<%= link_to 'Back', batteries_path %>

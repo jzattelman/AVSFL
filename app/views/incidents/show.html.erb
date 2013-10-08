@@ -1,0 +1,116 @@
+<% provide(:title, "Incident Report")%>
+
+<% content_for :nav do %>
+    <%= link_to 'Main Menu', static_pages_home_path %>
+    <%= link_to 'Back', incidents_path %>
+<% end %>
+
+<div class="sectionblock">
+  <p id="notice"><%= notice %></p>
+  <div class="flightdatablock">
+    <p>
+      <b>Incident date:</b>
+      <%= @incident.incident_date.strftime("%e %B, %Y") %>
+    </p>
+    <p>
+      <b>Report date:</b>
+      <% if @incident.report_date? %>
+        <%= @incident.report_date.strftime("%e %B, %Y") %>
+      <% end %>
+
+      
+    </p>
+    <p>
+      <b>Reporter name:</b>
+      <%= @incident.reporter_name %>
+    </p>
+  </div>
+
+  <div class="flightdatablock">
+    <p>
+      <b>Chief Pilot:</b>
+      <%= @chief_pilot %>
+    </p>
+    <p>
+      <b>Remote Pilot:</b>
+      <%= @remote_pilot %>
+    </p>
+    <p>
+      <b>Observer:</b>
+      <%= @session.observer %>
+    </p>
+  </div>
+
+  <div class="flightdatablock">
+    <p>
+      <b>Wind:</b>
+      <%= @session.windspeed %> knots
+    </p>
+    <p>
+      <b>Visibility:</b>
+      <%= @session.weather %>
+    </p>
+  </div>
+</div>
+
+<div class="sectionblock">
+  <div class="flightdatablock">
+    <p>
+      <b>Flight start time:</b>
+      <%= @flight.spin_up_time.strftime("%H:%M") %>
+    </p>
+    <p>
+      <b>Incident time:</b>
+      <% if @incident.incident_time? %>
+        <%= @incident.incident_time.strftime("%H:%M") %>
+      <% end %>
+    </p>
+  </div>
+
+  <div class="flightdatablock">
+    <p>
+      <b>Witness Names:</b></br>
+      <%= @incident.witness_names %>
+    </p>
+    <p>
+      <b>Damage:</b></br>
+      <%= "Personal,"  if @incident.personal_injury? %>
+      <%= "Equipment,"  if @incident.equipment_damage? %>
+      <%= "Third party,"  if @incident.thirdparty_damage? %>
+    </p>
+  </div>
+
+  <div class="flightdatablock">
+    <p>
+      <b>Notified:</b></br>
+      <%= "CASA,"  if @incident.casa_notified? %>
+      <%= "Chief Pilot,"  if @incident.chief_pilot_notified %>
+      <%= "Management,"  if @incident.management_notified? %>
+      <%= "ATRB,"  if @incident.atrb_notified? %>
+      <%= "Worksafe,"  if @incident.worksafe_notified? %>
+      <%= "Insurance,"  if @incident.insurance_notified? %>
+    </p>
+  </div>
+</div>
+
+<div class="sectionblock">
+  <p>
+    <b>Description:</b>
+    <%= @incident.description %>
+  </p>
+
+  <p>
+    <b>Consequences:</b>
+    <%= @incident.consequences %>
+  </p>
+
+  <p>
+    <b>Action taken:</b>
+    <%= @incident.action_taken %>
+  </p>
+  
+</div>
+
+
+
+

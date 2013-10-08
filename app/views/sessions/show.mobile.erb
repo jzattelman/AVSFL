@@ -1,0 +1,66 @@
+<div data-role="header">
+  <h1>Session</h1>
+  <%= link_to 'Add Flight', new_session_path, "data-icon" => "plus", "class" => "ui-btn-right" %>
+</div>
+ 
+<div data-role="content">
+  <p>
+    <b>Date:</b>
+    <%= @session.date.strftime("%A, %e %B, %Y") %>
+  </p>
+  <p>
+    <b>Client:</b>
+    <%= @session.client %>
+  </p>
+  <p>
+    <b>Location:</b>
+    <%= @session.location %>
+  </p>
+  <p>
+    <b>Chief Pilot:</b>
+    <%= @chief_pilot.first_name + " " + @chief_pilot.last_name %>
+  </p>
+  <p>
+    <b>Remote Pilot:</b>
+    <%= @remote_pilot.first_name + " " + @remote_pilot.last_name %>
+  </p>
+  <p>
+    <b>Chief Pilot:</b>
+    <%= @session.observer %>
+  </p>
+  <p>
+    <b>JSA Time:</b>
+    <%= @session.jsa_time.strftime("%l:%M %p") %>
+  </p>
+  <p>
+    <b>Pre-flight Time:</b>
+    <%= @session.pre_flight_time.strftime("%l:%M %p") %>
+  </p>
+  <p>
+    <b>Mission briefing Time:</b>
+    <%= @session.mission_briefing_time.strftime("%l:%M %p") %>
+  </p>
+  <p>
+    <b>Payload:</b>
+    <%= @session.payload %>
+  </p>
+  <p>
+    <b>GCS Deployment:</b>
+    <%= @session.gcs_deployment %>
+  </p>
+  <p>
+    <b>GCS Control:</b>
+    <%= @session.gcs_control %>
+  </p>
+  <p>
+    <b>Visibility:</b>
+    <%= @session.weather %>
+  </p>
+  <p>
+    <b>Windspeed:</b>
+    <%= @session.windspeed %> knots
+  </p>
+  <p>
+    <b>GPS Location:</b>
+    <%= "#{@session.latitude} #{@session.longitude}" %>
+  </p>

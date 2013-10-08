@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  battery_start_reading: 1
+  spin_up_time: 2013-06-13 14:39:51
+  spin_down_time: 2013-06-13 14:39:51
+  total_flight_time: 1
+  battery: 
+  session: 
+
+two:
+  battery_start_reading: 1
+  spin_up_time: 2013-06-13 14:39:51
+  spin_down_time: 2013-06-13 14:39:51
+  total_flight_time: 1
+  battery: 
+  session: 

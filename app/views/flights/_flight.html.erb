@@ -1,0 +1,9 @@
+<tr>
+  <td><%= flight.spin_up_time.strftime("%k:%M ") %></td>
+  <td><%= flight.spin_down_time.strftime("%k:%M ") %></td>
+  <td><%= number_with_precision(flight.total_flight_time, :precision => 2) %></td>
+  <td><%= battery = Battery.find(flight.battery_id).code %></td>
+  <td><%= flight.battery_start_reading %></td>
+  <td><%= link_to 'Edit', edit_session_flight_path(flight.session, flight), :remote => true %></td>
+  <td><%= link_to 'Destroy', [flight.session, flight], method: :delete, data: { confirm: 'Are you sure?' }, :remote => true %></td>
+</tr>
