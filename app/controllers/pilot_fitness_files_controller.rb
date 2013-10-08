@@ -45,6 +45,7 @@ class PilotFitnessFilesController < ApplicationController
   # POST /pilot_fitness_files.json
   def create
     @pilot_fitness_file = PilotFitnessFile.new(params[:pilot_fitness_file])
+    @pilot_fitness_file.company_id = current_user.company_id
 
     respond_to do |format|
       if @pilot_fitness_file.save
