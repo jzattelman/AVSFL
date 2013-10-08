@@ -1,0 +1,2 @@
+module FlightPlatformsHelper
+end

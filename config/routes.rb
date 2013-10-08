@@ -1,5 +1,8 @@
 Flightlog::Application.routes.draw do
 
+  resources :flight_platforms
+
+
   resources :user_sessions
   resources :users
   resources :companies
@@ -15,7 +18,7 @@ Flightlog::Application.routes.draw do
   get 'register', to: 'companies#new', as: :register
   get 'login', to: 'user_sessions#new', as: :login
   get 'logout', to: 'user_sessions#destroy', as: :logout
-  get 'home', to: 'static_pages#home', as: :home
+  get 'home', to: 'sessions#index', as: :home
 
   get "static_pages/home"
   get "static_pages/statistics"

@@ -1,0 +1,21 @@
+%h1 Listing flight_platforms
+
+%table
+  %tr
+    %th Name
+    %th Id
+    %th
+    %th
+    %th
+
+  - @flight_platforms.each do |flight_platform|
+    %tr
+      %td= flight_platform.name
+      %td= flight_platform.id
+      %td= link_to 'Show', flight_platform
+      %td= link_to 'Edit', edit_flight_platform_path(flight_platform)
+      %td= link_to 'Destroy', flight_platform, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Flight platform', new_flight_platform_path

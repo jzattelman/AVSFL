@@ -35,6 +35,12 @@
       <%= f.label "Suburb" %>
       <%= f.text_field :location %>
     </div>
+
+    <div class="field">
+      <%= f.label "Flight Platform" %>
+      <%= f.collection_select(:flight_platform_id, FlightPlatform.all, :id, :name, :prompt => 'Select Flight Platform', :selected => 1) %>
+    </div>
+
     <div class="field">
       <%= f.label :windspeed %>
       <div class="input-append">

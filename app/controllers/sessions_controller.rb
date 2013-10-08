@@ -23,6 +23,7 @@ class SessionsController < ApplicationController
     @session = Session.find(params[:id])
     @remote_pilot = Pilot.find(@session.remote_pilot_id)
     @chief_pilot = Pilot.find(@session.chief_pilot_id)
+    @flightplatform = FlightPlatform.find(@session.flight_platform_id)
     fitnessfiles = PilotFitnessFile.where("pilot_id = ? AND date = ?", @session.remote_pilot_id, @session.date)
     if fitnessfiles.count > 0
       if fitnessfiles.first.pass == true

@@ -10,6 +10,7 @@ class Company < ActiveRecord::Base
   has_many :pilots, :dependent => :destroy
   has_many :pilot_fitness_files, :dependent => :destroy
   has_many :incidents, :dependent => :destroy
+  has_many :flight_platforms, :dependent => :destroy
 
   accepts_nested_attributes_for :users
 end
