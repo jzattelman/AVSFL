@@ -16,5 +16,4 @@ class Session < ActiveRecord::Base
   validates :remote_pilot_id, :presence => true
   validates :client, :presence => true
   validates :task, :presence => true
-  validates :windspeed, :presence => true, :numericality => { :greater_than_or_equal_to => 0, :only_integer => true }
 end
