@@ -5,6 +5,7 @@ class Flight < ActiveRecord::Base
 
   validates_presence_of :battery_id, :message => "must be selected"
   validates_presence_of :battery_start_reading
+  validates_presence_of :windspeed
 
   belongs_to :battery
   belongs_to :session
