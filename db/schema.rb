@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131008082344) do
+ActiveRecord::Schema.define(:version => 20131009091508) do
 
   create_table "batteries", :force => true do |t|
     t.string   "code"
@@ -97,6 +97,7 @@ ActiveRecord::Schema.define(:version => 20131008082344) do
     t.decimal  "total_flight_time"
     t.boolean  "fullbatteryused"
     t.boolean  "isincident"
+    t.decimal  "windspeed"
   end
 
   add_index "flights", ["battery_id"], :name => "index_flights_on_battery_id"

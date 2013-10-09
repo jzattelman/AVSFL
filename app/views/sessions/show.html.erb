@@ -31,7 +31,7 @@
     <tr>
       <td><img src="/assets/weathericon.png"/></td>
       <td><b>Visibility</b></br><%= @session.weather %></td>
-      <td><b>Windspeed</b></br><%= @session.windspeed %> knots</td>
+      <td><b>Average Windspeed</b></br><%= @averagewind.round(1) %> knots</td>
       <td><b>Flight Platform</b></br><%= @flightplatform.name %></td>
     </tr>
   </tbody>

@@ -1,5 +1,5 @@
 class Flight < ActiveRecord::Base
-  attr_accessible :battery_start_reading, :spin_down_time, :spin_up_time, :total_flight_time, :battery_id, :session_id, :fullbatteryused, :isincident
+  attr_accessible :battery_start_reading, :spin_down_time, :spin_up_time, :total_flight_time, :battery_id, :session_id, :fullbatteryused, :isincident, :windspeed
   before_save :flighttimecalc
   #after_create :createincident
 

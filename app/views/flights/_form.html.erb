@@ -1,5 +1,12 @@
   <%= form_for([@flight.session, @flight]) do |f| %>
     <div class="field">
+      <%= f.label :windspeed %>
+      <div class="input-append">
+            <%= f.text_field :windspeed, class: "span2", id: "appendedInput" %>
+            <span class="add-on">kts</span>
+      </div>
+    </div>
+    <div class="field">
       <%= f.label :spin_up_time %>
       <%= f.time_select :spin_up_time, default: (Time.now) %>
     </div>

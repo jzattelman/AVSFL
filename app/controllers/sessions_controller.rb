@@ -25,6 +25,14 @@ class SessionsController < ApplicationController
     @remote_pilot = Pilot.find(@session.remote_pilot_id)
     @chief_pilot = Pilot.find(@session.chief_pilot_id)
     @flightplatform = FlightPlatform.find(@session.flight_platform_id)
+    totalflightwind = 0
+
+    @session.flights.each do |f|
+      totalflightwind = totalflightwind + f.windspeed
+    end
+    @averagewind = totalflightwind / (@session.flights.count)
+    @session.windspeed = @averagewind
+    
     fitnessfiles = PilotFitnessFile.where("pilot_id = ? AND date = ?", @session.remote_pilot_id, @session.date)
     if fitnessfiles.count > 0
       if fitnessfiles.first.pass == true
