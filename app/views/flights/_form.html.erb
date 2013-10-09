@@ -8,11 +8,11 @@
     </div>
     <div class="field">
       <%= f.label :spin_up_time %>
-      <%= f.time_select :spin_up_time, default: (Time.now) %>
+      <%= f.time_select :spin_up_time, default: (Time.now.in_time_zone("Melbourne")) %>
     </div>
     <div class="field">
       <%= f.label :spin_down_time %>
-      <%= f.time_select :spin_down_time, default: (Time.now) %>
+      <%= f.time_select :spin_down_time, default: (Time.now.in_time_zone("Melbourne")) %>
     </div>
     <div class="field">
       <%= f.label :battery_id %>
