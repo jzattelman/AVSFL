@@ -30,9 +30,14 @@ class SessionsController < ApplicationController
     @session.flights.each do |f|
       totalflightwind = totalflightwind + f.windspeed
     end
-    @averagewind = totalflightwind / (@session.flights.count)
-    @session.windspeed = @averagewind
-    
+    if @session.flights.count > 0
+      @averagewind = totalflightwind / (@session.flights.count)
+      @session.windspeed = @averagewind
+    else
+      @averagewind = 0
+      @session.windspeed = @averagewind
+    end
+
     fitnessfiles = PilotFitnessFile.where("pilot_id = ? AND date = ?", @session.remote_pilot_id, @session.date)
     if fitnessfiles.count > 0
       if fitnessfiles.first.pass == true
