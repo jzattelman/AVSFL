@@ -97,7 +97,7 @@ class FlightsController < ApplicationController
     respond_to do |format|
       if @flight.update_attributes(params[:flight])
         @session = @flight.session
-        format.html { redirect_to([@flight.session, @flight], :notice => 'flight was successfully updated.') }
+        format.html { redirect_to([@flight.session], :notice => 'flight was successfully updated.') }
         format.xml  { head :ok }
         format.js{}
       else
