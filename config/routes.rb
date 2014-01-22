@@ -25,6 +25,8 @@ Flightlog::Application.routes.draw do
   get "static_pages/welcome"
   get "static_pages/admin"
 
+  get "flight_platform/add_battery"
+
 
     # The priority is based upon order of creation:
   # first created -> highest priority.

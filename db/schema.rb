@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131009091508) do
+ActiveRecord::Schema.define(:version => 20140122075733) do
 
   create_table "batteries", :force => true do |t|
     t.string   "code"
@@ -87,7 +87,7 @@ ActiveRecord::Schema.define(:version => 20131009091508) do
   add_index "flight_platforms", ["company_id"], :name => "index_flight_platforms_on_company_id"
 
   create_table "flights", :force => true do |t|
-    t.integer  "battery_start_reading"
+    t.decimal  "battery_start_reading"
     t.time     "spin_up_time"
     t.time     "spin_down_time"
     t.integer  "battery_id"
@@ -167,6 +167,16 @@ ActiveRecord::Schema.define(:version => 20131009091508) do
   end
 
   add_index "pilots", ["company_id"], :name => "index_pilots_on_company_id"
+
+  create_table "platform_batteries", :force => true do |t|
+    t.integer  "flight_platform_id"
+    t.integer  "battery_id"
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
+  end
+
+  add_index "platform_batteries", ["battery_id"], :name => "index_platform_batteries_on_battery_id"
+  add_index "platform_batteries", ["flight_platform_id"], :name => "index_platform_batteries_on_flight_platform_id"
 
   create_table "sessions", :force => true do |t|
     t.date     "date"

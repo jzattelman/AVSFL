@@ -42,4 +42,8 @@ class Flight < ActiveRecord::Base
 		incident.save
   	end
   end
+
+  def addbattery(battery)
+    PlatformBattery.create(battery: battery)
+  end
 end

@@ -1,6 +1,12 @@
 class FlightPlatformsController < ApplicationController
   # GET /flight_platforms
   # GET /flight_platforms.json
+  def addbattery
+    flight_platform = FlightPlatform.find(params[:flight_platform_id])
+    battery = Battery.find(params[:battery_id])
+    flight_platform.addbattery(battery)
+  end
+
   def index
     @flight_platforms = FlightPlatform.all
 

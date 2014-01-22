@@ -18,7 +18,7 @@
       <tr>
 		  <td><%= flight.spin_up_time.strftime("%k:%M ") %></td>
 		  <td><%= flight.spin_down_time.strftime("%k:%M ") %></td>
-		  <td><%= flight.windspeed %> knots</td>
+		  <td><%= flight.windspeed %> m/s</td>
 		  <td><%= number_with_precision(flight.total_flight_time * 60, :precision => 0) %> minutes</td>
 		  <td><%= battery = Battery.find(flight.battery_id).code %></td>
 		  <td><%= flight.battery_start_reading %> Volts</td>

@@ -16,8 +16,9 @@
 		<div id = "header">
 			<div id="logobox">
 				<% if current_user %>
-					<%= image_tag current_user.company.image_url(:thumb).to_s%>
+					<!--<%= image_tag current_user.company.image_url(:thumb).to_s%>-->
 				<% end %>
+				<img src="http://www.woodscan.co/img/SPlogo.jpg">
 			</div>
 			<div id ="titlebox">
 				<div class="largeheading"><%= yield(:title) %></div>

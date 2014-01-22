@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
   def index
     user = current_user
     company = user.company
-    @sessions = company.sessions
+    @sessions = company.sessions.order("date")
 
     respond_to do |format|
       format.html # index.html.erb
