@@ -47,7 +47,7 @@
 </table>
 
 <div id="flighttable">
-  <%= render partial: "flights/flighttable", locals: { flights: @session.flights } %>
+  <%= render partial: "flights/flighttable", locals: { flights: @session.flights.order("created_at ASC") } %>
 </div>
 <td><%= link_to 'New Flight', new_session_flight_path(@session.id), class: "btn btn-small btn-inverse" %>
 
