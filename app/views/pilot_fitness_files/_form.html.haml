@@ -11,6 +11,10 @@
     = f.label "Pilot name"
     = f.collection_select(:pilot_id, Pilot.all, :id, :last_name, :prompt => 'Select Remote Pilot', :selected => 1)
 
+  .field
+    = f.label :date
+    = f.date_select :date
+
   %table
     %thead
       %tr

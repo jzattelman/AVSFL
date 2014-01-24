@@ -21,7 +21,7 @@ class PilotFitnessFile < ActiveRecord::Base
 end
 
 def finishcreate
-	self.date = Date.today
+	#self.date = Date.today
 	if(self.q1 == true \
 	&& self.q2 == true \
 	&& self.q3 == true \
