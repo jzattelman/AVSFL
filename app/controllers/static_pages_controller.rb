@@ -16,6 +16,7 @@ before_filter :require_user
   def statistics
   	@batteries = Battery.all
   	@pilots = Pilot.all
+    @platforms = FlightPlatform.all
   end
 
   def admin

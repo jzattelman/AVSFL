@@ -73,7 +73,6 @@
 
 
  #mainsection {
- 
  	width:920px;
  	float:left;
  	padding:20px;
@@ -81,7 +80,7 @@
  }
 
  #navigationbar {
- 	width:650px;
+ 	width:740px;
 	display:block;
 	margin: 0px auto;
 }

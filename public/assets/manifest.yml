@@ -21,12 +21,12 @@ weathericon.png: weathericon-9692c69b34947856340f02a10c3653fa.png
 weathericon/index.png: weathericon-9692c69b34947856340f02a10c3653fa.png
 welcomebackground.jpg: welcomebackground-6da1880d79b78fb4d085769b9a3c212c.jpg
 welcomebackground/index.jpg: welcomebackground-6da1880d79b78fb4d085769b9a3c212c.jpg
-application.js: application-1ba671627f10654dee2c3bd4553cd705.js
-application/index.js: application-1ba671627f10654dee2c3bd4553cd705.js
+application.js: application-633c9ebf3025c7f93ccdd13bdc02fdf1.js
+application/index.js: application-633c9ebf3025c7f93ccdd13bdc02fdf1.js
 bootstrap.min.js: bootstrap.min-c361e7e32f1dd21351fb787d5b34c4f1.js
 bootstrap/index.min.js: bootstrap.min-c361e7e32f1dd21351fb787d5b34c4f1.js
-application.css: application-82b954a3c6e7728f3c3c4b4a03372d3f.css
-application/index.css: application-82b954a3c6e7728f3c3c4b4a03372d3f.css
+application.css: application-02b78d04aabcffc68ce516c34213f52a.css
+application/index.css: application-02b78d04aabcffc68ce516c34213f52a.css
 bootstrap.min.css: bootstrap.min-286d9556ae8998cf274bc0172eff6e4d.css
 bootstrap/index.min.css: bootstrap.min-286d9556ae8998cf274bc0172eff6e4d.css
 jquery.min.map: jquery.min-1c0cf7b6a3425fbd9a3bfccab0a99a4e.map
