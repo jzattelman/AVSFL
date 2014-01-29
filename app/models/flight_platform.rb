@@ -24,7 +24,7 @@ class FlightPlatform < ActiveRecord::Base
 	end
 
 	def lastflightdate
-	  	lastsession =  sessions.order("date ASC").last.date
+	  	lastsession =  sessions.last.date
 
 	    return lastsession
   	end	
