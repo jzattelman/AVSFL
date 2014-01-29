@@ -25,7 +25,6 @@ class FlightPlatform < ActiveRecord::Base
 
 	def lastflightdate
 	  	lastsession =  sessions.last.date
-
 	    return lastsession
   	end	
 

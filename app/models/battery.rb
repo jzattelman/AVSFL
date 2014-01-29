@@ -3,6 +3,6 @@ class Battery < ActiveRecord::Base
 
   has_many :flights
   has_many :batterycharges
-  has_many :batteryuses, :dependent => :destroy
+  #has_many :batteryuses, :dependent => :destroy
   belongs_to :company
 end
