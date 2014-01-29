@@ -13,6 +13,7 @@
 			<tr>
 				<td><%= platform.name %></td>
 				<td><%= platform.flightcount %></td>
+				<td><%= number_with_precision(platform.flighttime, :precision => 2) %></td>
 
 			</tr>
 		<% end %>
