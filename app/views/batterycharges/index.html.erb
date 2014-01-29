@@ -16,7 +16,7 @@
   </tr>
 
 <% @batterycharges.each do |batterycharge| %>
-  <% battery = Battery.find(batterycharge.battery.id) %>
+  <% battery = Battery.find(batterycharge.battery_id) %>
   <tr>
     <td><%= batterycharge.date %></td>
     <td><%= battery.code %></td>
