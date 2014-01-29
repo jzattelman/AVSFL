@@ -4,6 +4,7 @@
   %tr
     %th Name
     %th Id
+    %th Type
     %th
     %th
     %th
@@ -12,6 +13,7 @@
     %tr
       %td= flight_platform.name
       %td= flight_platform.id
+      %td= flight_platform.platform_type
       %td= link_to 'Show', flight_platform
       %td= link_to 'Edit', edit_flight_platform_path(flight_platform)
       %td= link_to 'Destroy', flight_platform, :method => :delete, :data => { :confirm => 'Are you sure?' }

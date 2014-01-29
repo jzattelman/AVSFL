@@ -1,13 +1,13 @@
 class SessionsController < ApplicationController
-
   before_filter :require_user
+  helper_method :sort_column, :sort_direction
 
   # GET /sessions
   # GET /sessions.json
   def index
     user = current_user
     company = user.company
-    @sessions = company.sessions.order("date")
+    @sessions = company.sessions.order(sort_column + " " + sort_direction)
 
     respond_to do |format|
       format.html # index.html.erb
@@ -126,5 +126,13 @@ class SessionsController < ApplicationController
       format.json { head :no_content }
       format.js
     end
+  end
+
+  def sort_column
+    Session.column_names.include?(params[:sort]) ? params[:sort] : "date"
+  end
+
+  def sort_direction
+    %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
   end
 end

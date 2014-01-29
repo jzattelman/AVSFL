@@ -2,8 +2,10 @@
 	<thead>
 		<tr>
 			<th>Platform</th>
-			<th>No. of Flights</th>
-			<th>Hours of flying</th>
+			<th>Flights</th>
+			<th>Hours</th>
+			<th>Last Flown</th>
+
 		</tr>
 	</thead>
 	<tbody>
@@ -12,7 +14,9 @@
 				<td><%= platform.name %></td>
 				<td><%= platform.flightcount %></td>
 				<td><%= number_with_precision(platform.flighttime, :precision => 2) %></td>
+				<td><%= "#{platform.lastflightdate.day}-#{platform.lastflightdate.month}-#{platform.lastflightdate.year}" %></td>
 			</tr>
 		<% end %>
 	</tbody>
 </table>
+

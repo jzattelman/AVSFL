@@ -1,9 +1,11 @@
+
 <table class="table table-striped table-bordered">
 	<thead>
 		<tr>
 			<th>Pilot</th>
-			<th>No. of Flights</th>
-			<th>Hours of flying</th>
+			<th>Flights</th>
+			<th>Hours</th>
+			<th>Last flight</th>
 		</tr>
 	</thead>
 	<tbody>
@@ -12,6 +14,7 @@
 				<td><%= "#{pilot.first_name} #{pilot.last_name}" %></td>
 				<td><%= pilot.flights.count %></td>
 				<td><%= number_with_precision(pilot.flights.sum("total_flight_time"), :precision => 2) %></td>
+				<td><%= pilot.lastflighttime %></td>
 			</tr>
 		<% end %>
 	</tbody>

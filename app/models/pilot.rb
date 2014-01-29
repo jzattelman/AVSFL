@@ -11,4 +11,19 @@ class Pilot < ActiveRecord::Base
 
   belongs_to :company
 
+  def lastflighttime
+  	lastsession =  sessions.order("date ASC").last.date
+    comparedate = Date.new(lastsession.year, lastsession.month, lastsession.day)
+    today = Date.today
+    datediff = (today - comparedate).to_i
+    if datediff > 30
+      days = datediff % 30
+      output = "#{(datediff/30).to_i} months, #{days} days ago"
+    else
+      output = "#{datediff} days ago"
+    end
+
+    return output
+  end	
+
 end

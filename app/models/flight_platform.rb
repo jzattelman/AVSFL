@@ -1,5 +1,5 @@
 class FlightPlatform < ActiveRecord::Base
-  attr_accessible :company_code, :name, :company_id
+  attr_accessible :company_code, :name, :company_id, :platform_type
   belongs_to :company
   has_many :sessions
   has_many :platform_batteries
@@ -22,5 +22,11 @@ class FlightPlatform < ActiveRecord::Base
 		end
 		return count
 	end
+
+	def lastflightdate
+	  	lastsession =  sessions.order("date ASC").last.date
+
+	    return lastsession
+  	end	
 
 end
