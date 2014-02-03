@@ -32,17 +32,6 @@ class Flight < ActiveRecord::Base
     Rails.logger.debug "*"*120
   end
 
-  def createincident
-  	if self.isincident == true
-		incident = Incident.new
-		incident.incident_date = self.session.date
-		incident.location = self.session.location
-		incident.flight_id = self.id
-    incident.company = @csd
-		incident.save
-  	end
-  end
-
   def addbattery(battery)
     PlatformBattery.create(battery: battery)
   end

@@ -80,6 +80,15 @@ class FlightsController < ApplicationController
     session = Session.find(params[:session_id])
     @flight = session.flights.find(params[:id])
 
+    if params[:flight][:isincident] == "1" && @flight.incident.nil?
+      incident = Incident.new
+      incident.incident_date = @flight.session.date
+      incident.location = @flight.session.location
+      incident.flight_id = @flight.id
+      incident.company = current_user.company
+      incident.save
+    end
+
     start_hour = @flight.spin_up_time.hour
     start_min = @flight.spin_up_time.min
     start_sec = @flight.spin_up_time.sec
