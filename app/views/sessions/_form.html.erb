@@ -38,7 +38,7 @@
 
     <div class="field">
       <%= f.label "Flight Platform" %>
-      <%= f.collection_select(:flight_platform_id, FlightPlatform.all, :id, :name, :prompt => 'Select Flight Platform', :selected => @session.flight_platform_id) %>
+      <%= f.collection_select(:flight_platform_id, current_user.company.flight_platforms, :id, :name, :prompt => 'Select Flight Platform', :selected => @session.flight_platform_id) %>
     </div>
 
     <div class="field">
