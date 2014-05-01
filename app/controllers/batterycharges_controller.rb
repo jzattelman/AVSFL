@@ -39,6 +39,7 @@ class BatterychargesController < ApplicationController
   # GET /batterycharges/1/edit
   def edit
     @batterycharge = Batterycharge.find(params[:id])
+    @batteries = current_user.company.batteries
   end
 
   # POST /batterycharges

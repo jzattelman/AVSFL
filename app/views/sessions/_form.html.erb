@@ -61,15 +61,15 @@
 
     <div class="field">
       <%= f.label :payload %>
-      <%= f.select(:payload, ['10 megapixel']) %>
+      <%= f.select(:payload, ['Sony Nex7', 'GoPro Hero 3', 'Hi Res Camera', 'Panasonic']) %>
     </div>
     <div class="field">
-      <%= f.label :gcs_deployment %>
+      <%= f.label "Base Station Type" %>
       <%= f.select(:gcs_deployment, [['Static','Static'],['Mobile','Mobile']]) %>
     </div>
     <div class="field">
-      <%= f.label "GCS control" %>
-      <%= f.select(:gcs_control, [['MCS Screen','MCS Screen'],['Laptop','Laptop'],['Video Glasses','Video Glasses']]) %>
+      <%= f.label "Base Station Control" %>
+      <%= f.select(:gcs_control, [["Handheld Transmitter"], ["PC"], ["iPad"], ["Tablet"]]) %>
     </div>
 
     <div class="field">
@@ -92,6 +92,6 @@
   </div>
 
   <div class="sessionsubmit">
-    <%= f.submit %>
+    <%= f.submit "Update Mission" %>
   </div>
 <% end %>
