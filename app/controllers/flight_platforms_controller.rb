@@ -1,4 +1,7 @@
 class FlightPlatformsController < ApplicationController
+
+  before_filter :require_user
+  
   # GET /flight_platforms
   # GET /flight_platforms.json
   def addbattery
@@ -8,7 +11,7 @@ class FlightPlatformsController < ApplicationController
   end
 
   def index
-    @flight_platforms = FlightPlatform.all
+    @flight_platforms = current_user.company.flight_platforms
 
     respond_to do |format|
       format.html # index.html.erb
@@ -47,6 +50,7 @@ class FlightPlatformsController < ApplicationController
   # POST /flight_platforms.json
   def create
     @flight_platform = FlightPlatform.new(params[:flight_platform])
+    @flight_platform.company = current_user.company
 
     respond_to do |format|
       if @flight_platform.save

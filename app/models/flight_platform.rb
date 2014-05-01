@@ -1,5 +1,7 @@
 class FlightPlatform < ActiveRecord::Base
   attr_accessible :company_code, :name, :company_id, :platform_type
+  validates_presence_of :platform_type
+  validates_presence_of :name
   belongs_to :company
   has_many :sessions
   has_many :platform_batteries

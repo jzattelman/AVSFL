@@ -47,8 +47,8 @@
     </div>
     <div class="field">
       <%= f.label :remote_pilot_id %>
-      <% pilots = Pilot.find(:all, :conditions => {:uav_certified => true}) %>
-      <%= f.collection_select(:remote_pilot_id, Pilot.all, :id, :last_name, :prompt => 'Select Remote Pilot', :selected => @session.remote_pilot_id) %>
+      <% pilots = current_user.company.pilots.find(:all, :conditions => {:uav_certified => true}) %>
+      <%= f.collection_select(:remote_pilot_id, current_user.company.pilots, :id, :last_name, :prompt => 'Select Remote Pilot', :selected => @session.remote_pilot_id) %>
     </div>
     <div class="field">
       <%= f.label :chief_pilot_id %>
