@@ -12,9 +12,15 @@
 		<% pilots.each do | pilot | %>
 			<tr>
 				<td><%= "#{pilot.first_name} #{pilot.last_name}" %></td>
-				<td><%= pilot.flights.count %></td>
-				<td><%= number_with_precision(pilot.flights.sum("total_flight_time"), :precision => 2) %></td>
-				<td><%= pilot.lastflighttime %></td>
+				<% if pilot.flights.count > 0 %>
+					<td><%= pilot.flights.count %></td>
+					<td><%= number_with_precision(pilot.flights.sum("total_flight_time"), :precision => 2) %></td>
+					<td><%= pilot.lastflighttime %></td>
+				<% else %>
+					<td>0</td>
+					<td>0</td>
+					<td>None</td>
+				<% end %>
 			</tr>
 		<% end %>
 	</tbody>

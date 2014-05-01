@@ -12,12 +12,18 @@
 
 		<% platforms.each do | platform | %>
 			<tr>
-				<% if platform.flightcount > 0 %>
+				
 				<td><%= platform.name %></td>
-				<td><%= platform.flightcount %></td>
-				<td><%= number_with_precision(platform.flighttime, :precision => 2) %></td>
-				<td><%= "#{platform.lastflightdate.day}-#{platform.lastflightdate.month}-#{platform.lastflightdate.year}" %></td>
+				<% if platform.flightcount > 0 %>
+					<td><%= platform.flightcount %></td>
+					<td><%= number_with_precision(platform.flighttime, :precision => 2) %></td>
+					<td><%= "#{platform.lastflightdate.day}-#{platform.lastflightdate.month}-#{platform.lastflightdate.year}" %></td>
+				<% else %>
+					<td>0</td>
+					<td>0</td>
+					<td>None</td>
 				<% end %>
+
 			</tr>
 		<% end %>
 	</tbody>
