@@ -9,7 +9,7 @@
 
   .field
     = f.label "Pilot name"
-    = f.collection_select(:pilot_id, Pilot.all, :id, :last_name, :prompt => 'Select Remote Pilot', :selected => 1)
+    = f.collection_select(:pilot_id, current_user.company.pilots, :id, :last_name, :prompt => 'Select Remote Pilot', :selected => 1)
 
   .field
     = f.label :date
