@@ -6,7 +6,16 @@ class ApplicationController < ActionController::Base
 
   helper_method :current_user_session, :current_user, :require_user, :mobile_device?
 
+  layout :another_by_method
+
   private
+  def another_by_method
+    if current_user.nil?
+      "logged_out"
+    else
+      "application"
+    end
+  end
 
   def current_user_session
     return @current_user_session if defined?(@current_user_session)
