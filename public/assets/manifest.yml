@@ -21,8 +21,8 @@ weathericon.png: weathericon-9692c69b34947856340f02a10c3653fa.png
 weathericon/index.png: weathericon-9692c69b34947856340f02a10c3653fa.png
 welcomebackground.jpg: welcomebackground-6da1880d79b78fb4d085769b9a3c212c.jpg
 welcomebackground/index.jpg: welcomebackground-6da1880d79b78fb4d085769b9a3c212c.jpg
-application.js: application-633c9ebf3025c7f93ccdd13bdc02fdf1.js
-application/index.js: application-633c9ebf3025c7f93ccdd13bdc02fdf1.js
+application.js: application-a6d45ea19e52ffb734b194cc9b38e3bb.js
+application/index.js: application-a6d45ea19e52ffb734b194cc9b38e3bb.js
 bootstrap.min.js: bootstrap.min-c361e7e32f1dd21351fb787d5b34c4f1.js
 bootstrap/index.min.js: bootstrap.min-c361e7e32f1dd21351fb787d5b34c4f1.js
 application.css: application-dc35066e1f43ec18d97fc9551dd82aef.css
