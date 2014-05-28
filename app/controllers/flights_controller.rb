@@ -50,7 +50,7 @@ class FlightsController < ApplicationController
   # session /flights.json
   def create
     @session = Session.find(params[:session_id])
-    @flight = @session.flights.create(:flight)
+    @flight = @session.flights.create(params[:flight])
 
     respond_to do |format|
       if @flight.save
