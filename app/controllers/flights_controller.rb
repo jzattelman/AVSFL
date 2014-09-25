@@ -34,10 +34,6 @@ class FlightsController < ApplicationController
     session = Session.find(params[:session_id])
     @flight = session.flights.build
 
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @flight }
-    end
   end
 
   # GET /flights/1/edit
@@ -50,7 +46,7 @@ class FlightsController < ApplicationController
   # session /flights.json
   def create
     @session = Session.find(params[:session_id])
-    @flight = @session.flights.create(params[:flight])
+    @flight = @session.flights.create(flight_params)
 
     respond_to do |format|
       if @flight.save
