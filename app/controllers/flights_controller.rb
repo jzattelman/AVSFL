@@ -46,7 +46,7 @@ class FlightsController < ApplicationController
   # session /flights.json
   def create
     @session = Session.find(params[:session_id])
-    @flight = @session.flights.create(flight_params)
+    @flight = @session.flights.create(params[:flight])
 
     respond_to do |format|
       if @flight.save
@@ -124,13 +124,6 @@ class FlightsController < ApplicationController
       format.json { head :no_content }
       format.js{}
     end
-  end
-
-  def flight_params
-      # It's mandatory to specify the nested attributes that should be whitelisted.
-      # If you use `permit` with just the key that points to the nested attributes hash,
-      # it will return an empty hash.
-      params.require(:flight).permit(battery_start_reading, :spin_down_time, :spin_up_time, :total_flight_time, :battery_id, :session_id, :fullbatteryused, :isincident, :windspeed)
   end
 
 end
