@@ -1,5 +1,5 @@
 class LogMailer < ActionMailer::Base
-  default from: "flightlog@aerialvisionservices.com"
+  default from: "admin@flightlog.com.au"
 
 	def mission_chief_email(session)
 		@session = session
