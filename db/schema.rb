@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140129020235) do
+ActiveRecord::Schema.define(:version => 20140926005705) do
 
   create_table "batteries", :force => true do |t|
     t.string   "code"
@@ -204,6 +204,7 @@ ActiveRecord::Schema.define(:version => 20140129020235) do
     t.string   "address"
     t.integer  "company_id"
     t.integer  "flight_platform_id"
+    t.boolean  "send_email"
   end
 
   add_index "sessions", ["company_id"], :name => "index_sessions_on_company_id"

@@ -61,7 +61,7 @@
 
     <div class="field">
       <%= f.label :payload %>
-      <%= f.select(:payload, ['Sony Nex7', 'GoPro Hero 3', 'Hi Res Camera', 'Panasonic']) %>
+      <%= f.select(:payload, ['Sony Nex7', 'GoPro Hero 3', 'Hi Res Camera', 'Panasonic GH4']) %>
     </div>
     <div class="field">
       <%= f.label "Base Station Type" %>
@@ -92,6 +92,9 @@
   </div>
 
   <div class="sessionsubmit">
+    <div class="field">
+      <%= f.check_box :send_email %> &nbsp Notify Chief Pilot
+    </div>
     <%= f.submit "Update Mission" %>
   </div>
 <% end %>

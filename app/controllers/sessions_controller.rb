@@ -82,7 +82,9 @@ class SessionsController < ApplicationController
 
     respond_to do |format|
       if @session.save
-        LogMailer.mission_chief_email(@session).deliver
+        if @session.send_email == true
+          LogMailer.mission_chief_email(@session).deliver
+        end
         @sessions = Session.all
         format.html { redirect_to @session, notice: 'Session was successfully created.' }
         format.json { render json: @session, status: :created, location: @session }

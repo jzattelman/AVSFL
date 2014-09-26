@@ -1,5 +1,5 @@
 class Session < ActiveRecord::Base
-  attr_accessible :chief_pilot_id, :client, :date, :gcs_control, :gcs_deployment, :jsa_time, :location, :mission_briefing_time, :observer, :payload, :pre_flight_time, :remote_pilot_id, :task, :weather, :windspeed, :latitude, :longitude, :address, :company_id, :flight_platform_id
+  attr_accessible :chief_pilot_id, :client, :date, :gcs_control, :gcs_deployment, :jsa_time, :location, :mission_briefing_time, :observer, :payload, :pre_flight_time, :remote_pilot_id, :task, :weather, :windspeed, :latitude, :longitude, :address, :company_id, :flight_platform_id, :send_email
 
   geocoded_by :address
   after_validation :geocode, :if => :address?
