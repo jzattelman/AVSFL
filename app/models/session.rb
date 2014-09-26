@@ -11,6 +11,7 @@ class Session < ActiveRecord::Base
   has_many :flights, :dependent => :destroy
   has_many :incidents, :through => :flights, :dependent => :destroy
 
+  validates :flight_platform_id, :presence => true
   validates :location, :presence => true
   validates :chief_pilot_id, :presence => true
   validates :remote_pilot_id, :presence => true

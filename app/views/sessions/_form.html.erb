@@ -94,7 +94,7 @@
   <div class="sessionsubmit">
     <% if @session.new_record? %>
       <div class="field">
-        <%= f.check_box :send_email %> &nbsp Notify Chief Pilot  
+        <%= f.check_box :send_email, {checked: true} %> &nbsp Notify Chief Pilot  
       </div>
       <%= f.submit "Create Mission" %>
     <% else %>
