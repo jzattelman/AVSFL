@@ -4,10 +4,11 @@
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
   </head>
   <body>
-    <h1>A new flight mission has been created on Flight Log</h1>
+    <h1><%= "#{@pilot.first_name} #{@pilot.last_name}" %> has created a new flight mission</h1>
     <p>
       Mission Date: <%= @session.date %> <br>
-      Pilot: <%= "#{@pilot.first_name} #{@pilot.last_name}" %>
+      Pilot: <%= "#{@pilot.first_name} #{@pilot.last_name}" %> <br>
+      Observer: <%= @session.observer %> <br>
       Locations: <%= @session.location %> <br>
       Client: <%= @session.client %> <br>
       Platform: <%= @platform.name %> <br>
