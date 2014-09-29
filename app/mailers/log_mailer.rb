@@ -4,6 +4,7 @@ class LogMailer < ActionMailer::Base
 	def mission_chief_email(session)
 		@session = session
 		@pilot = Pilot.find(@session.remote_pilot_id)
+		@platform = session.platform
 		mail(to:"justin@aerialvisionservices.com.au", subject: "Flight log - Mission created")
 	end
 end

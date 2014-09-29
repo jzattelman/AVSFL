@@ -6,7 +6,11 @@
   <body>
     <h1>A flight mission has been created by, <%= "#{@pilot.first_name} #{@pilot.last_name}" %></h1>
     <p>
-      The mission details are:
+      Mission Date: <%= @session.date %>
+      Locations: <%= @session.location %>
+      Client: <%= @session.client %>
+      Platform: <%= @platform.name %>
+      Task: <%= @session.task %>
     </p>
   </body>
 </html>
