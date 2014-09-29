@@ -105,6 +105,7 @@ class SessionsController < ApplicationController
 
     respond_to do |format|
       if @session.update_attributes(params[:session])
+        LogMailer.mission_chief_email(@session).deliver
         @sessions = Session.all
         format.html { redirect_to @session, notice: 'Session was successfully updated.' }
         format.json { head :no_content }
