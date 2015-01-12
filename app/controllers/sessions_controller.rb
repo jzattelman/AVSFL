@@ -85,7 +85,7 @@ class SessionsController < ApplicationController
     respond_to do |format|
       if @session.save
         if @session.send_email == true
-          LogMailer.mission_chief_email(@session).deliver
+          LogMailer.mission_chief_email(@session, @chiefPilotEmail).deliver
         end
         @sessions = Session.all
         format.html { redirect_to @session, notice: 'Session was successfully created.' }
