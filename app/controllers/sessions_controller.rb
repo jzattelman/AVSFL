@@ -80,6 +80,8 @@ class SessionsController < ApplicationController
     @session.company_id = current_user.company_id
     @newsession = Session.new
 
+    @chiefPilotEmail = current_user.company.users.where(admin: true)
+
     respond_to do |format|
       if @session.save
         if @session.send_email == true
