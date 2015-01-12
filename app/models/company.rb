@@ -1,5 +1,5 @@
 class Company < ActiveRecord::Base
-  attr_accessible :name, :image
+  attr_accessible :name, :image, :chiefPilotEmail
 
   mount_uploader :image, ImageUploader
 

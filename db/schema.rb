@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140926005705) do
+ActiveRecord::Schema.define(:version => 20150112025217) do
 
   create_table "batteries", :force => true do |t|
     t.string   "code"
@@ -52,9 +52,10 @@ ActiveRecord::Schema.define(:version => 20140926005705) do
 
   create_table "companies", :force => true do |t|
     t.string   "name"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
     t.string   "image"
+    t.string   "chiefPilotEmail"
   end
 
   create_table "fitness_for_works", :force => true do |t|
